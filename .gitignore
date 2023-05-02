@@ -1,0 +1,7 @@
+*.pyc
+.tox/*
+.pytest_cache/*
+fixtures/*
+!fixtures/*.dist
+*.egg-info/*
+.env

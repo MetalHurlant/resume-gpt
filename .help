@@ -1,0 +1,3 @@
+alias activate="source ./.tox/run-dev/Scripts/activate"
+alias run="uvicorn app.main:app --reload"
+
