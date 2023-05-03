@@ -5,3 +5,8 @@ services:
       context: .
     ports:
       - "8000:80"
+    volumes:
+      - "./app:/code/app"
+      - ".env:/code/.env"
+      - "./fixtures/resume.txt:/code/fixtures/resume.txt"
+      - "./fixtures/chatbot.db:/code/fixtures/chatbot.db"

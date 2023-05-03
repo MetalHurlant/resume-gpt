@@ -30,6 +30,14 @@ class Message(BaseModel):
     message: str
 
 
+@app.get("/messages")
+async def getMessage(session_id: str) -> dict:
+    messages = db_api.get_messages(session_id=session_id)
+    messages = sorted(messages, key=lambda m: m["message_id"])
+
+    return {"response": messages}
+
+
 @app.post("/messages")
 async def postMessage(message: Message) -> dict:
     if not message.session_id:
