@@ -19,10 +19,10 @@ async def root():
         "response": "Hello there"
     }
 
-
-@app.get("/settings")
-async def get_settings():
-    return settings.dict()
+if settings.environment == "dev":
+    @app.get("/settings")
+    async def get_settings():
+        return settings.dict()
 
 
 class Message(BaseModel):

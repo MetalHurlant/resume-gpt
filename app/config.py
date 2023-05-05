@@ -10,6 +10,7 @@ class OpenAI(BaseModel):
     chat_completion_model: str
 
 class Settings(BaseSettings):
+    environment: str = "dev"
     database: Database
     openai: OpenAI
 
